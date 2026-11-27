@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hidden-state-aux-calibrator"
+version = "0.1.0"
+description = "Hidden-state auxiliary head calibration (HyperThink, DCOCO-Lite) and Layer 14-22 semantic probes with 32-byte AVX2 binary export."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "torch>=2.2.0",
+    "transformers>=4.46.0",
+    "numpy>=1.26.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["aux_calibrator*"]
